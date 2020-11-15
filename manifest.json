@@ -1,0 +1,25 @@
+{
+    "name": "Clickerado",
+    "version": "1.05",
+    "description": "This is a program that automates mouse-clicking to keep browser applications from logging out prematurely",
+    "manifest_version": 2,
+    "incognito": "split",
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": ["content.js"]
+        }
+    ],
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "permissions": ["tabs"],
+    "browser_action": {
+        "default_icon": "clicker.png",
+        "default_popup": "popup/index.html",
+        "default_title": "Clickerado"
+    }
+
+}

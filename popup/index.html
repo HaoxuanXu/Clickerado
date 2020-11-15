@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Clickerado</title>
+        <link rel="icon" href="../clicker.png">
+        <link rel="stylesheet" href="../css/main.css">
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Stalinist+One&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Stalinist+One&display=swap" rel="stylesheet">
+        <link href=“https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css”/>
+        <!-- jQuery and JS bundle w/ Popper.js -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="jumbotron">
+            <h2 id="title">CLICKERADO</h2>
+            <p class="lead">Please input the minute and second intervals.</p>
+            
+            <hr class="my-4">
+            <div id="intervals">
+                <input class="form-control" id="minutes" type="number" placeholder="minutes">
+                <input class="form-control" id="seconds" type="number" min="0" max="59" placeholder="seconds">         
+            </div>
+            <div class="col">
+                <p id="status-message"></p>
+            </div>
+            <div>
+                <div class="col">
+                    <div>
+                        <button type="button" class="btn btn-outline-primary" id="submit-button">Execute</button>                  
+                    </div>   
+                    <div>
+                        <button type="button" class="btn btn-outline-danger" id="stop-button">Stop</button> 
+                    </div>       
+                </div>               
+            </div>                     
+        </div>
+        <div class="col">
+            <h2 class="alert alert-success" role="alert" id="notification"></h2>            
+        </div>
+        <img src="../clicker.png">
+        
+        <script src="popup.js"></script>
+    </body>
+</html>

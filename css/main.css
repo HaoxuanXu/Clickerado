@@ -1,0 +1,63 @@
+#submit-button {
+    margin-top: 20px;
+}
+
+#title {
+    font-family: 'Stalinist One', cursive;
+}
+
+#notification {
+    visibility: hidden;
+}
+
+#stop-message {
+    visibility: hidden;
+}
+
+#intervals {
+    margin-top: 50px;
+}
+
+#status-message {
+    font-family: 'Architects Daughter', cursive;
+}
+
+.jumbotron {
+    padding-bottom: 200px;
+}
+
+body {
+    min-width: 500px;
+    min-height: 800px;
+    overflow:hidden;
+}
+
+ form {
+    padding-top: 20px;
+ }
+
+ img {
+     width: 200px;
+ }
+
+ span {
+    align-self: auto;
+ }
+
+ input {
+    font-size: 12px;
+    width: 150px;
+    height: 20px;
+ }
+ div {
+     margin: 10px auto;
+ }
+
+ button {
+     width: 100px;
+     display: inline;
+ }
+
+ p {
+     margin-top: 300px;
+ }
