@@ -13,11 +13,24 @@ function deliverMessage(message) {
 }
 
 
+if (localStorage.getItem("returnmessage")) {
+	document.querySelector("#submit-button").disabled = true;		
+	document.querySelector("#status-message").style.visibility = "visible";
+	document.querySelector("#status-message").innerText = localStorage.getItem("returnmessage");
+	document.querySelector("#notification").style.visibility = "visible";
+	document.querySelector("#notification").classList.remove("alert-warning", "alert-dismissible", "fade", "show");
+	document.querySelector("#notification").classList.add("alert-success");
+	document.querySelector("#notification").innerText = "Mouse clicking job is currently running";
+};
+
+
 // Listen in on response from content.js
 chrome.runtime.onMessage.addListener((message, sender, senderResponse) => {
 	if (message.consoleMessage != undefined) {
-		document.querySelector("#submit-button").disabled = true;
+
 		let displayText = message.consoleMessage;
+		localStorage.setItem("returnmessage", displayText)
+		document.querySelector("#submit-button").disabled = true;		
 		document.querySelector("#status-message").style.visibility = "visible";
 		document.querySelector("#status-message").innerText = displayText;
 	}
@@ -64,6 +77,8 @@ document.querySelector("#stop-button").addEventListener("click", () => {
 	document.querySelector("#submit-button").disabled = false;
 	// document.querySelector("#stop-button").disabled = true;
 	document.querySelector("#status-message").style.visibility = "hidden";
+	localStorage.removeItem("returnmessage")
+	// Stop the content.js 
 	deliverMessage({clear: true})
 })
 
